@@ -29,6 +29,13 @@ const Hero = () => {
       opacity: 1,
       delay: 1.5,
     })
+
+    gsap.to('#cta', {
+      opacity: 1,
+      delay: 2.1,
+      y: -50
+    })
+
   },[]);
 
   return (
@@ -37,12 +44,17 @@ const Hero = () => {
         <p className='hero-title'>iPhone 15 Pro</p>
 
         <div className='w-9/12 md:w-10/12'>
-          <video autoPlay muted playsInline={true} key={videoSrc} loop className='pointer-events-none'>
+          <video autoPlay muted playsInline={true} key={videoSrc} className='pointer-events-none'>
             <source src={videoSrc} type='video/mp4'/>
           </video>
         </div>
-
       </div>
+
+      <div id='cta' className='flex translate-y-20 flex-col items-center opacity-0'>
+        <a href="#highlights" className='btn'>Buy</a>
+        <p className='text-xl font-normal'>From $199/month or $999</p>
+      </div>
+
     </section>
   )
 }
